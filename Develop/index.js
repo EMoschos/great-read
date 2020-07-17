@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const generateMarkdown = require("./utils/generateMarkdown");
 const genMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
@@ -10,6 +9,7 @@ const questions = [
     "What are the user steps to install the App (installation instructions)?",
     "How do i use the App?",
     "What are the guidelines for people to contribute to this project?",
+    "What License would you like to use for this project",
     "What are the steps to test the application?",
     "What is your GitHub UserName?",
     "What is your Email Address?"
@@ -47,16 +47,12 @@ function promptUser() {
             name: "license",
             message: questions[5],
             choices: [
-                "Apache License 2.0 (Apache-2.0)",
-                "BSD 3-Clause",
-                "BSD 2-Clause",
-                "GNU General Public License (GPL)",
-                "Lesser General Public License (LGPL)",
-                "MIT license",
-                "Mozilla Public License 2.0 (MPL-2.0)",
-                "Common Development and Distribution License (CDDL-1.0)",
-                "Eclipse Public License version 2.0 (EPL-2.0)",
-                "N/A",
+                "Apache-2.0",
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "LGPL-3.0",
+                "MIT",
+                "ISC",
                 new inquirer.Separator()
             ]
         },
@@ -80,12 +76,19 @@ function promptUser() {
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function (err) {
+        if (err) {
+            return console.log(err);
+        };
+        console.log("Created README.md");
+    })
 }
 
 // function to initialize program
 async function init() {
     const data = await promptUser();
     const readmeCreate = genMarkdown.generateMarkdown(data);
+    await writeToFile("README.md", readmeCreate);
     console.log(readmeCreate);
     console.log(JSON.stringify(data, null, '\t'));
 };

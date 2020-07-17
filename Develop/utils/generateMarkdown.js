@@ -1,49 +1,59 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `
-# ${data.title}
+  return `# ${data.title} ![License](https://img.shields.io/static/v1?label=Licesne&message=${data.license}&color=green)
+  
 
-## Description 
+  ## Description ✏️
+  
+  ${data.description}
+  
+  ## Table of Contents 📚
+  
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#Contributing)
+  * [Testing](#Testing)
+  * [Questions](#Questions)
+  
+  ## Installation 
 
-${data.description}
+  \`\`\`
+  📥 ${data.installation}
+  \`\`\`
 
-## Table of Contents
+  ## Usage 
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#Contributing)
-* [Tests](#Tests)
-* [Questions](#Questions)
+  \`\`\`
+  ▶️ ${data.usage}
+  \`\`\`
 
-## Installation
+  ## License 
+  
+  📜 License Code: ${data.license}
 
-${data.installation}
+  For detailed information on license [Click Here](https://opensource.org/licenses/${data.license})
+  
+  ## Contributing
+  
+  👌 ${data.contributing}
+  
+  ## Testing 
 
-## Usage 
+  \`\`\`
+  ✔️ ${data.test}
+  \`\`\`
 
-${data.usage}
+  ## Questions 
+  
+  Direct questions to me via email 📧 at [${data.email}](${data.email}).  Please use "${data.title} questions" in the subject and I will hopefully return a response within 48hrs.
 
-## License
-
-${data.license}
-
-## Contributing
-
-${data.contributing}
-
-## Tests
-
-${data.tests}
-
-## Questions
-
-${data.github}
-${data.email}
-
+  More information can be found at my [GitHub Profile](https://github.com/${data.github}).
+  
 ---
+This README was created by the "Great-Read" 📝 Node.js app.  Developed by Eleftherios Moschos
 `;
-}
+};
 
 module.exports = {
   generateMarkdown: generateMarkdown
