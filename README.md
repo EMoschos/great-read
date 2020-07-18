@@ -28,11 +28,12 @@
   ```
   ▶️ 
   Run 'node index.js' from the CLI and follow the prompts. 
-  There are a series of questions need to be answered in order to populate the required fields.  
+  There are a series of questions need to be answered in order to populate the required fields such as Title, Description, inatallation, Usage, License, Contribution, Username and Email.
   There are no restrictions if no response is provided.  The app has been left in this state so that you can create a README skeleton to come back to later or if some info you don't have on hand.  
   Once all the questions have been answered the README.md will be created.  The README is fully editable after this point.  
   There are links in the README that will work based on information inputted such as the GitHub link and the license more info link. Contents links are also fully functional.
   ```
+  [Click Here](https://drive.google.com/file/d/1E2A8xLK1-LCit38cN1gjAiT3uvxBWW8T/view) to see a walkthrough video 🎥 of the app in action!
 
   ## License 
   
@@ -53,7 +54,8 @@
 
   ```
   ✔️ 
-  run 'node index.js' from the CLI and inspect the console logs for the correct information.  
+  run 'node index.js' from the CLI and inspect the console logs for the correct information.  You should also find a new "README.md" file appear in the same repo location as the "index.js" file.  If you run the app again and make changes this will overwrite the whole file so make sure you change the final product again.
+
   If the app is broken the CLI will return error that need to be debugged but as it stands now the app is in working order.
   ```
 
